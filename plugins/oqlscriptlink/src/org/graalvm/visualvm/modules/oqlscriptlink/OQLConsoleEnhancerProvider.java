@@ -4,12 +4,10 @@
  */
 package org.graalvm.visualvm.modules.oqlscriptlink;
 
-import javax.swing.JComponent;
 import org.graalvm.visualvm.heapviewer.HeapContext;
 import org.graalvm.visualvm.heapviewer.oql.OQLConsoleView;
 import org.graalvm.visualvm.heapviewer.ui.HeapViewerActions;
 import org.graalvm.visualvm.heapviewer.ui.HeapViewerFeature;
-import org.graalvm.visualvm.lib.profiler.api.ProfilerToolbar;
 import org.openide.util.Lookup;
 import org.openide.util.lookup.ServiceProvider;
 

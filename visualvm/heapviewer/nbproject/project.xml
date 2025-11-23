@@ -168,6 +168,7 @@
                 <package>org.graalvm.visualvm.heapviewer</package>
                 <package>org.graalvm.visualvm.heapviewer.java</package>
                 <package>org.graalvm.visualvm.heapviewer.model</package>
+                <package>org.graalvm.visualvm.heapviewer.oql</package>
                 <package>org.graalvm.visualvm.heapviewer.ui</package>
                 <package>org.graalvm.visualvm.heapviewer.utils</package>
                 <package>org.graalvm.visualvm.heapviewer.utils.counters</package>
