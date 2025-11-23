@@ -16,6 +16,10 @@ This VisualVM plugin enhances the OQL Console and Objects view with productivity
 5. **Copy Object ID** - Right-click on any object → "Copy Object ID for OQL" copies the memory address in hex format (e.g., `0x7f8a4c001000`) for use with `heap.findObject()`
 6. **Copy Property Path** - Right-click on any property → "Copy Property Path for OQL" copies the full property path (e.g., `foo.bar.items[2].name`) for use in OQL queries
 
+### Threads View Enhancements
+
+7. **Copy Cleaned Thread Dump** - Button in toolbar that copies the thread dump to clipboard with "local variable:" lines removed for compatibility with IntelliJ's "Analyze Stack Trace or Thread Dump..." feature
+
 ## Usage
 
 ### OQL Console - Live Script Development
@@ -43,6 +47,18 @@ This VisualVM plugin enhances the OQL Console and Objects view with productivity
 3. Right-click on any child property in the tree
 4. Select **"Copy Property Path for OQL"**
 5. In OQL Console, use the path: `select o.items[2].name from com.example.MyClass o`
+
+### Threads View - Copy Cleaned Thread Dump
+
+1. Navigate to the Threads view
+2. Switch to HTML/text mode (if not already in that view)
+3. Click the **Copy** button in the toolbar (💾 icon)
+4. The thread dump is copied to clipboard with "local variable:" lines removed
+5. In IntelliJ IDEA, use **Analyze → Analyze Stack Trace or Thread Dump...**
+6. Press **Ctrl+V** (Cmd+V on Mac) to paste the cleaned thread dump
+7. IntelliJ will correctly parse and display the thread dump
+
+**Why this is needed:** VisualVM's thread dump includes local variable information that IntelliJ's analyzer doesn't understand. This feature strips those lines automatically.
 
 ## Workflow Examples
 
@@ -120,6 +136,14 @@ This VisualVM plugin enhances the OQL Console and Objects view with productivity
 - Object IDs retrieved using `Instance.getInstanceId()` and formatted as hex
 - Property paths built by traversing node hierarchy from leaf to root
 - Handles fields, array indices, and nested properties
+- Uses system clipboard for copy operations
+
+### Threads View Features
+- Button added to JavaThreadsView toolbar via enhancer pattern
+- Thread dump text extracted from HTMLView component using reflection
+- HTML tags stripped and entities decoded
+- Lines starting with "local " (trimmed) are filtered out
+- Compatible with IntelliJ IDEA's "Analyze Stack Trace or Thread Dump..." feature
 - Uses system clipboard for copy operations
 
 ## Building
