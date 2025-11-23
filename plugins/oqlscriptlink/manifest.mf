@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.graalvm.visualvm.modules.oqlscriptlink
+OpenIDE-Module-Install: org/graalvm/visualvm/modules/oqlscriptlink/Installer.class
+OpenIDE-Module-Localizing-Bundle: org/graalvm/visualvm/modules/oqlscriptlink/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
