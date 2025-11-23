@@ -64,7 +64,7 @@ public class CopyObjectIdAction extends HeapViewerNodeAction.Provider {
         }
 
         @Override
-        protected void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) {
             long objectId = instance.getInstanceId();
             String idString = "0x" + Long.toHexString(objectId);
 

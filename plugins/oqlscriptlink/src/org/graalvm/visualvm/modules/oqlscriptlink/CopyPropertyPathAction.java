@@ -156,7 +156,7 @@ public class CopyPropertyPathAction extends HeapViewerNodeAction.Provider {
         }
 
         @Override
-        protected void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) {
             // Copy to clipboard
             StringSelection selection = new StringSelection(path);
             Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, selection);
